@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+      <title>Honeybee Haven - Chats</title>
+      <link rel="shortcut icon" type="x-icon" th:href="@{/images/honeybeeHavenLogo.svg}"/>
+    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
+    <link rel="stylesheet" th:href="@{/css/client/customer_signup_style.css}">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css}">
+      <link th:href="@{/css/fontawesome/all.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/brands.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/fontawesome.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/regular.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/solid.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/svg-with-js.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/v4-font-face.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/v4-shims.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/v5-font-face.css}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+          /* Add styling for the container div */
+          .chat-container {
+              border: 1px solid #ccc;
+              border-radius: 40px;
+               margin: 10px;Optional:/* Add margin for spacing between containers */
+              /*   padding: 10px;  Optional: Add padding for spacing between border and content */
+
+          }
+
+          /* Add styling for the image */
+          .chat-image {
+              border-radius: 50px;
+              margin-right: 10px; /* Optional: Add margin for spacing between image and text */
+          }
+
+          .chat-container a{
+              text-decoration: none;
+          }
+
+          .chat-container a h3{
+              color:black;
+              text-decoration: none;
+              margin-left: 10px;
+          }
+
+          .b_log {
+              border-radius: 10rem;
+              color: yellow;
+              text-transform: uppercase;
+              font-size: 1rem;
+              letter-spacing: 0.15rem;
+              transition: all 0.7s;
+              position:relative;
+              overflow: hidden;
+              z-index: 1;
+              font-weight: bolder;
+          }
+          .b_log:after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: white;
+              border-radius: 10rem;
+              border-color: black;
+              z-index: -2;
+
+          }
+          .b_log:before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0%;
+              height: 100%;
+              background-color:  #ffd900;
+              transition: all 0.7s ease;
+              border-radius: 10rem;
+              border-color:  black;
+              z-index: -1;
+          }
+          .b_log:hover {
+              color: white;
+              border-color: #ffd900;
+
+          }
+          .b_log:hover:before {
+              width: 100%;
+          }
+
+          body{
+              background: url("/images/client/signup_page_img.jpg");
+              height: 100vh;
+              width: 100vw;
+              margin: 0;
+              background-size: cover;
+
+          }
+
+
+      </style>
+   </head>
+<body>
+
+ 
+ <div class="container" style="opacity: 0.7; background-color: transparent; box-shadow: none;">
+    <input type="checkbox" id="flip">
+
+    
+    <div class="forms"  style="background-color: transparent;">
+        <div th:if="${error == 1}" > <!-- Show this div if error == 1 -->
+            <p style="color: red">Incorrect Fields</p>
+        </div>
+
+        <div th:if="${error == 2}"> <!-- Show this div if error == 2 -->
+            <p style="color: red">Email already exists</p>
+        </div>
+        <div th:if="${error == 3}"> <!-- Show this div if error == 2 -->
+            <p style="color: red">File Size exceeded give less than 1 MB</p>
+        </div>
+        <div class="form-content">
+       
+        <div class="signup-form">
+          <div class="title"  style="color: black; font-weight: bolder;">All chats</div>
+            <div   th:each="chat : ${chats}" class="chat-container b_log">
+                <a th:href="@{/HoneyBeeHaven/chatwith(convid=${chat.convid})}">
+                    <div  style="display: flex; align-items: center">
+
+                    <img th:src="@{${chat.image}}" height="50px" width="50px"  class="chat-image"/>
+                    <h3 th:text="${chat.name}"></h3>
+
+                </div>
+                </a>
+            </div>
+
+            <div>
+                <a href="/HoneyBeeHaven/index"><button class="btn btn-primary" style="background-color: #018725; border-radius: 20px; border: 0px; color: white; padding: 10px 20px; margin: 20px">HOME</button></a>
+            </div>
+    </div>
+
+    </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

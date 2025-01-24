@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Honeybee Haven - About Us</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <link rel="shortcut icon" type="x-icon" href="/images/honeybeeHavenLogo.svg">
+    <link th:href="@{/css/fontawesome/all.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/brands.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/fontawesome.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/regular.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/solid.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/svg-with-js.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/v4-font-face.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/v4-shims.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/v5-font-face.css}" rel="stylesheet">
+    <!-- Google Web Fonts -->
+    <link th:href="@{img/favicon.ico}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap}" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css}" rel="stylesheet">
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css}" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link th:href="@{/css/home/index.css}"   rel="stylesheet">
+    <link th:href="@{/css/userInterface/header.css}" rel="stylesheet">
+    <link th:href="@{/css/userInterface/navbar.css}" rel="stylesheet">
+    <link th:href="@{/css/userInterface/footer.css}" rel="stylesheet">
+    <link th:href="@{/css/home/error.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+<div class="container-fluid px-5 d-none d-lg-block">
+    <div class="row gx-5 py-3 align-items-center">
+        <div class="col-lg-3">
+            <div class="d-flex align-items-center justify-content-start">
+                <img th:src="@{/images/honeybeeHavenLogo.svg}" class="HeaderLogo">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="d-flex align-items-center justify-content-center">
+                <a th:href="@{/HoneyBeeHaven/index}" class="navbar-brand ms-lg-5">
+                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Honeybee </span>Haven</h1>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="d-flex align-items-center justify-content-end">
+                <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-primary btn-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+<div th:utext="${navbar}" class="sticky-lg-top"></div>
+<!-- Topbar End -->
+
+
+
+
+
+
+<div class="about-section">
+    <h1>OH NO! It seems like you have encountered an error :(</h1>
+    <h1>Kindly if you can give us your feedback as to why and how this happened so that we can make sure it does not happen again in the future. </h1>
+    <h1>THANKS FOR YOUR COOPERATION!</h1>
+    <a href="/HoneyBeeHaven/index"><button  value="Send message" name="submit" id="submitButton" class="btn btn-primary" style="border-radius: 20px">Go back to home</button></a>
+   </div>
+
+<div id="contact" class="contact-area section-padding">
+    <div class="container">
+        <div class="section-title text-center">
+            <h1 style="color: rgb(16, 94, 16); font-weight: 900">Get in Touch</h1>
+            <p style="color: black; font-weight: 900">
+                Feel free to reach out to us; we're here to answer your questions,
+                provide assistance, and listen to your feedback. Your inquiries are
+                important to us, and we look forward to connecting with you.
+            </p>
+        </div>
+
+        <form th:action="@{/HoneyBeeHaven/contact}" method="post" th:object="${contactCard}">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="contact">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <input type="text" name="name" th:field="*{contactName}"  maxlength="250" class="form-control" placeholder="Name" required />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" name="email" th:field="*{contactEmail}"  maxlength="250" class="form-control" placeholder="Email"  required/>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="text" name="subject"  th:field="*{contactSubject}" class="form-control"  maxlength="250" placeholder="Subject" required />
+                            </div>
+                            <div class="form-group col-md-12">
+                                <textarea rows="6" name="message"  th:field="*{contactMessage}" class="form-control" placeholder="Your message"  maxlength="250" required="required"></textarea>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <button type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-contact-bg"> Send Message </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--- END COL -->
+
+                <div class="col-lg-5">
+                    <div class="single_address">
+                        <i class="fa fa-map-marker"></i>
+                        <h4 style="color: rgb(16, 94, 16); font-weight: 900">
+                            Our Address
+                        </h4>
+                        <p style="color: black; font-weight: 900">
+                            123 Nectar Lane, Beeville, Honeyland
+                        </p>
+                    </div>
+                    <div class="single_address">
+                        <i class="fa fa-envelope"></i>
+                        <h4 style="color: rgb(16, 94, 16); font-weight: 900">
+                            Send your message
+                        </h4>
+                        <p style="color: black; font-weight: 900">
+                            honeybeehaven99@gmail.com
+                        </p>
+                    </div>
+                    <div class="single_address">
+                        <i class="fa fa-phone"></i>
+                        <h4 style="color: rgb(16, 94, 16); font-weight: 900">
+                            Call us on
+                        </h4>
+                        <p style="color: black; font-weight: 900">(+12) 345 67890</p>
+                    </div>
+                    <div class="single_address">
+                        <i class="fa fa-clock-o"></i>
+                        <h4 style="color: rgb(16, 94, 16); font-weight: 900">
+                            Work Time
+                        </h4>
+                        <p style="color: black; font-weight: 900">
+                            Mon - Fri: 08:00 - 16:00 <br />Sat: 10:00 - 14:00
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Facts Start -->
+
+
+<!-- Footer Start -->
+
+<!-- Footer End -->
+
+
+<!-- JavaScript Libraries -->
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>Beekeeper - Reported Reviews</title>
+	<link rel="shortcut icon" type="image/x-icon" th:href="@{/images/beekeeperLogo.svg}">
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/feathericon.min.css}">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" th:href="@{/css/all-reports.css}">
+	<link th:href="@{http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css}" rel="stylesheet"  type='text/css'>
+	<link th:href="@{https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Contrail+One&display=swap}" rel="stylesheet">
+	<link th:href="@{/css/fontawesome/all.css}" rel="stylesheet">
+	<link th:href="@{/css/fontawesome/brands.css}" rel="stylesheet">
+	<link th:href="@{/css/fontawesome/fontawesome.css}" rel="stylesheet">
+	<link th:href="@{/css/fontawesome/regular.css}" rel="stylesheet">
+	<link th:href="@{/css/fontawesome/solid.css}" rel="stylesheet">
+	<link th:href="@{/css/fontawesome/svg-with-js.css}" rel="stylesheet">
+	<link th:href="@{/css/fontawesome/v4-font-face.css}" rel="stylesheet">
+	<link th:href="@{/css/fontawesome/v4-shims.css}" rel="stylesheet">
+	<link th:href="@{/css/fontawesome/v5-font-face.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div class="main-wrapper">
+		<div class="header">
+			<div class="header-left">
+				<a th:href="@{/BeeKeeper/AdminDashboard}" class="logo">
+					<span class="logoclass">BEE KEEPER</span>
+				</a>
+				<a th:href="@{/BeeKeeper/AdminDashboard}" class="logo logo-small">
+					<img th:src="@{images/beekeeperLogo.svg}" alt="Logo" width="30" height="30">
+				</a>
+			</div>
+			<a id="toggle_btn"> <i class="fe fe-text-align-left"></i> </a>
+			<a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
+			<ul class="nav user-menu">
+				<li class="nav-item dropdown has-arrow">
+					<input type="checkbox" id="userDropdown" class="dropdown-toggle">
+					<label for="userDropdown" class="dropdown-label">
+                <span class="user-img">
+                    <img class="rounded-circle" th:src="@{/images/avatar-01.jpg}" width="31" alt="avatar picture">
+                </span>
+					</label>
+					<div class="dropdown-menu">
+						<div class="user-header">
+							<div class="avatar avatar-sm">
+								<img th:src="@{/images/avatar-01.jpg}" alt="User Image" class="avatar-img rounded-circle">
+							</div>
+							<div class="user-text">
+								<h6 id="LoggedInName"></h6>
+								<p class="text-muted mb-0" id="LoggedInStatus"></p>
+							</div>
+						</div>
+						<a class="dropdown-item" id="logoutAdmin" th:href="@{/BeeKeeper/Adminlogout}">Logout</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<style>
+			.dropdown-menu {
+				display: none;
+				position: absolute;
+				background-color: #fff;
+				border: 1px solid #ddd;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+				z-index: 1;
+				max-width: 200px; /* Set your desired maximum width */
+				right: 0; /* Adjust the positioning as needed */
+			}
+
+			/* Adjust the positioning based on the content */
+			input[type="checkbox"]:checked + .dropdown-label + .dropdown-menu {
+				display: block;
+				right: 0; /* Adjust as needed */
+			}
+		</style>
+
+		<div class="sidebar" id="sidebar">
+			<div class="sidebar-inner slimscroll">
+				<div id="sidebar-menu" class="sidebar-menu">
+					<ul>
+						<li class="active"> <a th:href="@{/BeeKeeper/AdminDashboard}"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a> </li>
+						<li class="list-divider"></li>
+						<li class="submenu">
+							<a th:href="@{/BeeKeeper/AdminReports}"><i class="fa-solid fa-star" style="color: black;"></i><span>Reported Reviews</span></a>
+							<a th:href="@{/BeeKeeper/ReportedClients}"><i class="fa-solid fa-wheat-awn fa-beat-fade" style="color: black;"></i><span>Reported Clients</span></a>
+							<a th:href="@{/BeeKeeper/ReportedBusiness}"><i class="fa-solid fa-business-time fa-flip" style="color: black;"></i><span>Reported Business</span></a>
+							<a th:href="@{/BeeKeeper/contact}"><i class="fa-solid fa-address-book fa-fade" style="color: black;"></i><span>Contacts</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-wrapper">
+			<div class="content container-fluid">
+				<div class="page-header">
+					<div class="row align-items-center">
+						<div class="col">
+							<div class="mt-5">
+								<h4 class="card-title float-left mt-2">All Reported Reviews</h4>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="card card-table">
+							<div class="card-body booking_card">
+								<div class="table-responsive">
+									<table class="table table-stripped table table-hover table-center mb-0" >
+										<thead>
+											<tr>
+											<th>Report ID</th>
+											<th>Complainer ID</th>
+											<th>Complainee ID</th>
+											<th>Reason </th>
+											<th>Review ID </th>
+											<th>Review Content</th>
+											<th>Report Type</th>
+											<th>Action</th>
+											</tr>
+											</thead>
+											<tbody id="table-body">
+											<tr th:each="report : ${data}">
+												<td th:text="${report.getReportID()}"></td>
+												<td th:text="${report.getComplainerID()}"></td>
+												<td th:text="${report.getComplaineeID()}"></td>
+												<td th:text="${report.getReportReason()}"></td>
+												<td th:text="${report.getReviewID()}"></td>
+												<td th:text="${report.getReviewContent()}"></td>
+												<td th:text="${report.getReportType()}"></td>
+												<td>
+													<a th:href="@{/BeeKeeper/banUser(userID=${report.getComplaineeID()}, reviewID=${report.getReviewID()}, reportID=${report.getReportID()})}" class="edit" title="Ban User & Delete Review">
+														<i class="material-icons fa-solid fa-user-slash" style="color:red;"></i>
+													</a>
+													<a th:href="@{/BeeKeeper/dismissReport(reportID=${report.getReportID()})}" class="delete" title="Dismiss Report">
+														<i class="material-icons fa-solid fa-trash " style="color:green;"></i>
+													</a>
+													<a th:href="@{/BeeKeeper/tempBanUser(userID=${report.getComplaineeID()}, reviewID=${report.getReviewID()}, reportID=${report.getReportID()})}" class="delete" title="Temporarily Ban User & Delete Review" >
+														<i  class="material-icons fa-solid fa-ban" style="color:orange;"></i>
+													</a>
+													<a th:href="@{/BeeKeeper/deleteReview(reviewID=${report.getReviewID()}, reportID=${report.getReportID()})}" class="delete" title="Delete Review">
+														<i  class="material-icons fa-solid fa-eraser" style="color:#5959ee;"></i>
+													</a>
+												</td>
+											</tr>
+											</tbody>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+section .row {
+  margin-bottom: 40px;
+}
+
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+hr {
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: none;
+  text-align: center;
+}
+.card .fa-trash {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.card .fa-pencil {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.fa-trash {
+  color: red;
+}
+
+.fa-pen {
+  color: green;
+}

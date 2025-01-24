@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <title>Honeybee Haven - Login</title>
+      <link rel="shortcut icon" type="x-icon" th:href="@{/images/honeybeeHavenLogo.svg}"/>
+    <meta charset="UTF-8">
+    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
+    <link rel="stylesheet" th:href="@{/css/home/login.css}">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link th:href="@{/css/fontawesome/all.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/brands.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/fontawesome.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/regular.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/solid.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/svg-with-js.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/v4-font-face.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/v4-shims.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/v5-font-face.css}" rel="stylesheet">
+      <style>
+          #myVideo {
+              position: fixed;
+              right: 0;
+              bottom: 0;
+              min-width: 100%;
+              min-height: 100%;
+          }
+          #inp1{
+              background-color: black;
+              color: white;
+          }
+          #inp2{
+              background-color: black;
+              color: white;
+          }
+          .favicons{
+              margin-left: 10px;
+              margin-right: 10px;
+          }
+          #submitButton{
+              background-color: black;
+              box-shadow: none;
+              border-color: black;
+          }
+          #submitButton:hover{
+              background-color: #ffd900;
+              border-color:#ffd900;
+              color: black;
+
+              transition-property:  background-color,border-color;
+              transition-duration: 0.7s;
+              transition-timing-function: ease;
+          }
+          #submitButton:not(:hover){
+              transition-property:  background-color,border-color;
+              transition-duration: 1.5s;
+              transition-timing-function: ease;
+          }
+
+      </style>
+   </head>
+<body>
+
+<video autoplay muted loop id="myVideo">
+    <source src="/video/honeybeeHaven.mp4" type="video/mp4">
+</video>
+
+  <div class="container " style="opacity: 0.7; background-color: transparent; box-shadow: none;">
+      <input type="checkbox" id="flip">
+     <div class="forms" style="background-color: transparent;">
+         <div th:if="${error == 1}"><p style="color: red">Invalid email or password</p></div>
+         <div th:if="${error == 2}"><p style="color: red">You have been banned</p></div>
+         <div th:if="${error == 3}"><p style="color: red">You have been temporarily banned for 30 days, try again later</p></div>
+        <div class="form-content" style="background-color: transparent;">
+          <div class="login-form">
+            <div class="title" style="color: black;">Login</div>
+          <form th:action="@{/HoneyBeeHaven/logindata}" th:object="${loginData}" method="post">
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="favicons fas fa-envelope"></i>
+                <input id="inp1"  type="text" placeholder="Enter your email" maxlength="250" th:field="*{email}" required>
+              </div>
+              <div class="input-box">
+                <i class="favicons fas fa-lock"></i>
+                <input id="inp2"  type="password" placeholder="Enter your password" maxlength="250" th:field="*{password}" required>
+              </div>
+              <div class="button input-box">
+                <input id="submitButton" type="Submit" value="Submit">
+              </div>
+                  <div style="margin-top: 6px; color: black;" class="text sign-up-text">Back to
+                    <a th:href="@{/HoneyBeeHaven/index}" style="color: rebeccapurple; ">HOME</a>
+                  </div>
+            </div>
+        </form>
+      </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

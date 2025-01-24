@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Honeybee Haven</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <link th:href="@{/css/fontawesome/all.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/brands.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/fontawesome.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/regular.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/solid.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/svg-with-js.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/v4-font-face.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/v4-shims.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/v5-font-face.css}" rel="stylesheet">
+    <!-- Favicon -->
+    <link th:href="@{/images/honeybeeHavenLogo.svg}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap}"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css}" rel="stylesheet">
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css}" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link th:href="@{./assets/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link th:href="@{/css/home/index.css}" rel="stylesheet">
+    <link th:href="@{/css/userInterface/navbar.css}" rel="stylesheet">
+    <link th:href="@{/css/userInterface/header.css}" rel="stylesheet">
+    <link th:href="@{/css/userInterface/footer.css}" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid px-5 d-none d-lg-block">
+        <div class="row gx-5 py-3 align-items-center">
+            <div class="col-lg-3">
+                <div class="d-flex align-items-center justify-content-start">
+
+                    <img th:src="@{/images/honeybeeHavenLogo.svg}" class="HeaderLogo">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a th:href="@{/HoneyBeeHaven/index}" class="navbar-brand ms-lg-5">
+                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Honeybee </span>Haven</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="d-flex align-items-center justify-content-end">
+                    <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-primary btn-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+
+
+    <div th:utext="${navbar}" class="sticky-lg-top"></div>
+
+    <!-- Navbar End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img class="w-100" th:src="@{/images/home/img3.png}" alt="Image">
+                    <div
+                        class="carousel-caption top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center">
+                        <div class="text-start p-5" style="max-width: 900px; margin-top: 10px;">
+                            <!-- <h3 class="text-white">Honeybee Haven</h3> 
+                            <h1 class="display-1 text-white mb-md-4">Digital age farming - where tradition meets technology.</h1> -->
+                            <a href="/HoneyBeeHaven/client_signup"
+                                class="btn btn-primary py-md-3 px-md-5 me-3">Customer Signup</a>
+                            <a href="/HoneyBeeHaven/business_signup"
+                                class="btn btn-primary py-md-3 px-md-5 me-3">Business Signup</a>
+                        </div>
+                        <div class="text-start p-5" style="max-width: 900px; margin-top: -70px;">
+                            <a href="/HoneyBeeHaven/login" class="btn btn-secondary py-md-3 px-md-5">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- Banner Start -->
+    <div class="container-fluid banner mb-5">
+        <div class="container">
+            <div class="row gx-0">
+                <div class="col-md-6">
+                    <div class="bg-primary bg-vegetable d-flex flex-column justify-content-center p-5"
+                        style="height: 300px;">
+                        <h3 class="text-white mb-3">No time to search</h3>
+                        <p class="text-white">Simply share details and connect with the best business for the job.</p>
+                        <a class="text-white fw-bold" href="/HoneyBeeHaven/client_signup">Get Started<i
+                                class="bi bi-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="bg-secondary bg-fruit d-flex flex-column justify-content-center p-5"
+                        style="height: 300px;">
+                        <h3 class="text-white mb-3">Want to grow your business</h3>
+                        <p class="text-white">Create you free business profile and reach more customers online</p>
+                        <a class="text-white fw-bold" href="/HoneyBeeHaven/business_signup">Get Started<i
+                                class="bi bi-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner Start -->
+
+    <!-- About Start -->
+    <div class="container-fluid about pt-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-6 pb-5">
+                    <div class="mb-3 pb-2">
+                        <h6 class="text-primary text-uppercase">About Us</h6>
+                        <h1 class="display-5">From Seed to Success</h1>
+                    </div>
+                    <p class="mb-4">Discover a world of agricultural products designed to nurture and flourish your
+                        every endeavor.</p>
+                    <div class="row gx-5 gy-4">
+                        <div class="col-sm-6">
+                            <i class="fa fa-seedling display-1 text-secondary"></i>
+                            <h4>Beyond E-Commerce</h4>
+                            <p class="mb-0">We're a community. Dive deep into a digital haven that understands your
+                                farming needs.</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <i class="fa fa-award display-1 text-secondary"></i>
+                            <h4>Quality You Can Trust</h4>
+                            <p class="mb-0">
+                                Every product. Every service. Handpicked and verified for the modern-day farmer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-fluid bg-primary facts py-5 mb-5">
+        <div class="container py-5">
+            <div class="row gx-5 gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex">
+                        <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-star fs-4 text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white">Businesses</h5>
+                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">20</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex">
+                        <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-users fs-4 text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white">Daily Purchases</h5>
+                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">15</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex">
+                        <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-check fs-4 text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white">Complete Project</h5>
+                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">30</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex">
+                        <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-mug-hot fs-4 text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white">Happy Clients</h5>
+                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">10</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+    <!-- Services Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="mb-3">
+                        <h6 class="text-primary text-uppercase">Connect With US! </h6>
+                        <h1 class="display-5"></h1>
+                    </div>
+                    <p class="mb-4">The agricultural realm is ever-evolving. With each passing season, new challenges
+                        arise, and fresh solutions emerge. At Honeybee Haven, we promise to be your constant in this
+                        changing world. With the buzz of innovation and the dedication of a worker bee, we endeavor to
+                        provide the best in class for all your agricultural needs. </p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-light text-center p-5">
+                        <i class="fa fa-star display-1 text-primary mb-3"></i>
+                        <h4>Top Class Services</h4>
+                        <p class="mb-0">Connect with the top class service providers all over the nation.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-light text-center p-5">
+                        <i class="fa fa-map-marker display-1 text-primary mb-3"></i>
+                        <h4>Fertilizers</h4>
+                        <p class="mb-0">Get the best quality fertilizers for farm for enhanced productivity. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-light text-center p-5">
+                        <i class="fa fa-mug-hot display-1 text-primary mb-3"></i>
+                        <h4>Chemicals</h4>
+                        <p class="mb-0">Get your required chemicals by your favourite brand.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-light text-center p-5">
+                        <i class="fa fa-tractor display-1 text-primary mb-3"></i>
+                        <h4>Modern Truck</h4>
+                        <p class="mb-0">Let make your work more easy and fast by the appropriate modern truck you want.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item bg-light text-center p-5">
+                        <i class="fa fa-seedling display-1 text-primary mb-3"></i>
+                        <h4>Machenical Equipments</h4>
+                        <p class="mb-0">
+                            Get the desired equipments according to you need for you agriculture.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+
+
+
+
+    <div class="container-fluid bg-footer bg-primary text-white mt-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <h4 class="text-white mb-4">Beefriend Us</h4>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-white me-2"></i>
+                                <p class="text-white mb-0">123 Nectar Lane, Beeville, Honeyland</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-white me-2"></i>
+                                <p class="text-white mb-0">honeybeehaven99@gmail.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-white me-2"></i>
+                                <p class="text-white mb-0">(+12) 345 67890</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-white mb-4">Quick Links</h4>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white mb-2" href="/HoneyBeeHaven/privacyPolicy" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Privacy Policy</a>
+                                <a class="text-white mb-2" href="/HoneyBeeHaven/termsAndConditions" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Terms & Conditions</a>
+                                <a class="text-white mb-2" href="/HoneyBeeHaven/about" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>About Us</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-white mb-4">Popular Links</h4>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white mb-2" href=  "https://youtu.be/zpkN0ycubDs" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Live Bee Cam</a>
+                                <a class="text-white mb-2" href= "https://www.nature.org/en-us/" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Nature Conservancy</a>
+                                <a class="text-white mb-2" href=   "https://www.pollinator.org/" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Pollinator Partnership</a>
+                                <a class="text-white mb-2" href="https://thebeeconservancy.org/" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Bee Conservancy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-n5">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-secondary p-5">
+                        <h4 class="text-white">Contact Us</h4>
+                        <p>Subscribe to our hive and stay buzzing with the latest updates, sweet deals, and all things honeybee magic.</p>
+                        <p>Let the nectar of knowledge flow to your inbox because you deserve a taste of the sweet stuff.</p>
+                        <form action="/HoneyBeeHaven/contact">
+                            <div class="input-group">
+                                <input style="display: none;" type="text" id="subscriberEmailInput" class="form-control border-white p-3" placeholder="Your Email">
+                                <button id="subscriberEmailButton"  class="btn btn-primary" >Contact</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

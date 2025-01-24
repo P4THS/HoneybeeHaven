@@ -1,0 +1,36 @@
+body {
+  background-color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+}
+
+.fa-anchor,
+.fa-bar-chart,
+.fa-tasks,
+.fa-cog,
+.fa-info-circle {
+  font-size: 200px;
+}
+#privacyPolicyHeading {
+  color: white;
+}
+.privPolicyHeader {
+  color: white;
+  text-align: center;
+  background-color: #34ad54;
+  font-size: small;
+}
+
+.paraDiv {
+  border-block: 5px solid;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}

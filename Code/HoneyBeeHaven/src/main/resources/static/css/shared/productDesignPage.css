@@ -1,0 +1,131 @@
+.main-container{
+    width: 80%;
+    border: 1px solid #e2e2e2;
+    padding: 20px;
+}
+
+.review-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+}
+
+.centralizing-div{
+    display: flex;
+    justify-content: center;
+}
+
+.review-form{
+    display: none;
+    width: 80%;
+    border: 1px solid #e2e2e2;
+    padding: 20px;
+}
+
+.review-box{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #e2e2e2;
+    border-top: 0px;
+    width: 80%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.review-item{
+    margin-top: 20px;
+    width: 50%;
+
+}
+
+button{
+    border: 0px;
+    background-color: white;
+    color: #8D9AA8;
+    padding: 0px;
+}
+
+.review .fa-star{
+    color: gold;
+}
+
+.review .fa-star-half-alt{
+    color: gold;
+}
+
+.review-stars{
+    margin-bottom: 10px;
+}
+
+.review h1{
+    color: #6a5b5c; 
+    font-size: 25px;
+    font-family: var(--bs-font-sans-serif); 
+    margin-bottom: 20px;
+}
+
+.review-item h5{
+    font-size: 20px;
+    font-family: var(--bs-font-sans-serif); 
+    color: #6a5b5c; 
+    margin-bottom: 8px;
+}
+
+.review-para{
+    color: rgb(51, 50, 50);
+    margin-bottom: 20px;
+    white-space: wrap;
+}
+
+.review-item button{
+    font-size: 13px;
+    color: #6a5b5c;
+}
+
+.rating-box .stars {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.review-form .stars i {
+    color: #b5b8b1;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.stars i.active {
+    color: gold;
+}
+
+.review-form h6{
+    color: #6a5b5c; 
+    font-size: 15px;
+    font-family: var(--bs-font-sans-serif); 
+    margin-bottom: 20px;
+}
+
+.review-form input{
+    margin-bottom: 20px;
+    padding-left: 10px;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    height: 50px;
+}
+
+.review-form textarea{
+    margin-bottom: 20px;
+    padding-left: 10px;
+    width: 100%;
+    height: 120px;
+    border: 1px solid #e2e2e2;
+}
+
+.review-form button {
+    background-color: #34AD54;
+    color: white;
+    padding: 10px;
+    
+}

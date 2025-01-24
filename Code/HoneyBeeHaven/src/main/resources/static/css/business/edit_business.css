@@ -1,0 +1,13 @@
+input[type="file"] {
+    display: none;
+}
+
+/* Style the custom button */
+.custom-file-upload {
+    background-color: #34AD54;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

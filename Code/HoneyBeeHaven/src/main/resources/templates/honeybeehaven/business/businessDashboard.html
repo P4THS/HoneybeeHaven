@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Honeybee Haven - Business Dashboard</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+ 
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap}" rel="stylesheet">
+    <link rel="shortcut icon" type="x-icon" th:href="@{/images/honeybeeHavenLogo.svg}">
+    
+    <!-- Icon Font Stylesheet -->
+    <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css}" rel="stylesheet">
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css}" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link th:href="@{/css/home/index.css}"   rel="stylesheet">
+    <link th:href="@{/css/userInterface/header.css}" rel="stylesheet">
+    <link th:href="@{/css/userInterface/navbar.css}" rel="stylesheet">
+    <link th:href="@{/css/userInterface/footer.css}" rel="stylesheet">
+    <link th:href="@{/css/business/businessDashboard.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/all.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/brands.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/fontawesome.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/regular.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/solid.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/svg-with-js.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/v4-font-face.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/v4-shims.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/v5-font-face.css}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid px-5 d-none d-lg-block">
+        <div class="row gx-5 py-3 align-items-center">
+            <div class="col-lg-3">
+                <div class="d-flex align-items-center justify-content-start">
+                    <img th:src="@{/images/honeybeeHavenLogo.svg}" class="HeaderLogo">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a th:href="@{/HoneyBeeHaven/index}" class="navbar-brand ms-lg-5">
+
+                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Honeybee </span>Haven</h1>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="d-flex align-items-center justify-content-end">
+                    <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-primary btn-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="sticky-lg-top" th:utext="${navbar}"></div>
+    <!-- Navbar End -->
+
+    <br>
+    <br>
+
+<div id="aboutSectionBusiness">
+    <div class="container bootstrap snippets bootdey">
+        <div class="panel-body inf-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <img alt="business profile image" id="businessProfileImage" style="width:300px;" th:src="@{${image}}">
+                    <a href="/HoneyBeeHaven/edit_business"><button id="editProfileButton" href="" class="btn btn-lg  mx-5 my-1" >Edit Profile</button></a>
+                    <a th:href="@{/HoneyBeeHaven/view_business(userid=${userid})}"><button id="editProfileButton" href="" class="btn btn-lg  mx-5 my-1" >View Profile</button></a>
+                    <a th:href="@{/HoneyBeeHaven/logout}"><button id="logoutbutton" class="btn btn-lg  mx-5 my-1">Logout</button></a>
+                </div>
+                <div class="col-md-6">
+                    <h1 id="headerTitle">About</h1><br>
+                    <div class="table-responsive">
+                        <table class="table table-user-information">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <strong>
+
+                                        <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                                        Business Identification
+                                    </strong>
+                                </td>
+                                <td class="text-primary" th:text="${userid}">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-user  text-primary"></span>
+                                        Bussiness Name
+                                    </strong>
+                                </td>
+                                <td class="text-primary" th:text="${businessname}">
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-bookmark text-primary"></span>
+                                        Username
+                                    </strong>
+                                </td>
+                                <td class="text-primary" th:text="${name}">
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-eye-open text-primary"></span>
+                                        Address
+                                    </strong>
+                                </td>
+                                <td class="text-primary" th:text="${address}">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-eye-open text-primary"></span>
+                                        Description
+                                    </strong>
+                                </td>
+                                <td class="text-primary" th:text="${description}">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-envelope text-primary"></span>
+                                        Email
+                                    </strong>
+                                </td>
+                                <td class="text-primary" th:text="${email}">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                        Contact Information
+                                    </strong>
+                                </td>
+                                <td class="text-primary" th:text="${contact}">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                        Rating
+                                    </strong>
+                                </td>
+                                <td class="text-primary" th:text="${rating}">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                        Bank Account Number
+                                    </strong>
+                                </td>
+                                <td class="text-primary" th:text="${account}">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        <span class="glyphicon glyphicon-calendar text-primary"></span>
+                                        Target Keywords
+                                    </strong>
+                                </td>
+                                <td class="text-primary" th:text="${keywords}">
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-footer bg-primary text-white mt-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <h4 class="text-white mb-4">Beefriend Us</h4>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-white me-2"></i>
+                                <p class="text-white mb-0">123 Nectar Lane, Beeville, Honeyland</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-envelope-open text-white me-2"></i>
+                                <p class="text-white mb-0">honeybeehaven99@gmail.com</p>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-telephone text-white me-2"></i>
+                                <p class="text-white mb-0">(+12) 345 67890</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-white mb-4">Quick Links</h4>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white mb-2" href="/HoneyBeeHaven/privacyPolicy" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Privacy Policy</a>
+                                <a class="text-white mb-2" href="/HoneyBeeHaven/termsAndConditions" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Terms & Conditions</a>
+                                <a class="text-white mb-2" href="/HoneyBeeHaven/about" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>About Us</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <h4 class="text-white mb-4">Popular Links</h4>
+                            <div class="d-flex flex-column justify-content-start">
+                                <a class="text-white mb-2" href=  "https://youtu.be/zpkN0ycubDs" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Live Bee Cam</a>
+                                <a class="text-white mb-2" href= "https://www.nature.org/en-us/" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Nature Conservancy</a>
+                                <a class="text-white mb-2" href=   "https://www.pollinator.org/" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Pollinator Partnership</a>
+                                <a class="text-white mb-2" href="https://thebeeconservancy.org/" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Bee Conservancy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-n5">
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-secondary p-5">
+                        <h4 class="text-white">Contact Us</h4>
+                        <p>Subscribe to our hive and stay buzzing with the latest updates, sweet deals, and all things honeybee magic.</p>
+                        <p>Let the nectar of knowledge flow to your inbox because you deserve a taste of the sweet stuff.</p>
+                        <form action="/HoneyBeeHaven/contact">
+                            <div class="input-group">
+                                <input style="display: none;" type="text" id="subscriberEmailInput" class="form-control border-white p-3" placeholder="Your Email">
+                                <button id="subscriberEmailButton"  class="btn btn-primary" >Contact</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

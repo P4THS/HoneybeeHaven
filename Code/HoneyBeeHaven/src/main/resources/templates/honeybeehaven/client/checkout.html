@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HoneyBee Haven - Checkout</title>
+  <link rel="stylesheet" th:href="@{https://pro.fontawesome.com/releases/v5.10.0/css/all.css}" />
+  <link rel="stylesheet" th:href="@{https://pro.fontawesome.com/releases/v5.10.0/css/all.css}" />
+  <link th:href="@{/images/honeybeeHavenLogo.svg}" rel="icon">
+  <link th:href="@{/css/fontawesome/all.css}" rel="stylesheet">
+  <link th:href="@{/css/fontawesome/brands.css}" rel="stylesheet">
+  <link th:href="@{/css/fontawesome/fontawesome.css}" rel="stylesheet">
+  <link th:href="@{/css/fontawesome/regular.css}" rel="stylesheet">
+  <link th:href="@{/css/fontawesome/solid.css}" rel="stylesheet">
+  <link th:href="@{/css/fontawesome/svg-with-js.css}" rel="stylesheet">
+  <link th:href="@{/css/fontawesome/v4-font-face.css}" rel="stylesheet">
+  <link th:href="@{/css/fontawesome/v4-shims.css}" rel="stylesheet">
+  <link th:href="@{/css/fontawesome/v5-font-face.css}" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/client/style.css}" />
+  <link rel="stylesheet" th:href="@{/css/client/checkout.css}" />
+
+
+  <style>
+    .btn112{
+      background-color: #34AD54;
+    }
+    .btn112:hover{
+      opacity: 0.4;
+      transition: opacity .5s;
+    }
+    .btn112:not(:hover) {
+      transition: opacity 0.5s;
+    }
+
+    #form1 {
+      background-color: white;
+      margin-left: 100px;
+      padding: 30px;
+      text-align: left;
+      box-shadow: 1px 1px 4px 1px #e6e6e6;
+      width: 800px;
+    }
+
+    .btn1 {
+      outline: none;
+      border: none;
+      padding: 10px 30px;
+      color: white;
+      border-radius: 1rem;
+      width: 80%;
+      cursor: pointer;
+      margin-left: 70px;
+    }
+
+    .btn112 {
+      outline: none;
+      border: none;
+      padding: 10px 30px;
+      color: white;
+      border-radius: 1rem;
+      width: 80%;
+      cursor: pointer;
+      margin-top: 30px;
+      margin-left: 70px;
+    }
+
+    .table1 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .th1 {
+      border-bottom: 1px solid #dadada;
+      padding: 10px 0;
+    }
+
+    .tr1 > td:nth-child(1) {
+      text-align: left;
+      color: #2d2d2a;
+    }
+
+    .tr1 > td:nth-child(2) {
+      text-align: right;
+      color: #52ad9c;
+    }
+
+    .td1 {
+      border-bottom: 1px solid #dadada;
+      padding: 25px 25px 25px 0;
+    }
+
+
+    #form1 {
+      background-color: white;
+      margin-left: 100px;
+      padding: 30px;
+      text-align: left;
+      box-shadow: 1px 1px 4px 1px #e6e6e6;
+      width: 800px;
+    }
+
+    .btn1 {
+      outline: none;
+      border: none;
+      padding: 10px 30px;
+      color: white;
+      border-radius: 1rem;
+      width: 80%;
+      cursor: pointer;
+      margin-left: 70px;
+    }
+
+    .btn112 {
+      outline: none;
+      border: none;
+      padding: 10px 30px;
+      color: white;
+      border-radius: 1rem;
+      width: 80%;
+      cursor: pointer;
+      margin-top: 30px;
+      margin-left: 70px;
+    }
+
+    .table1 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .th1 {
+      border-bottom: 1px solid #dadada;
+      padding: 10px 0;
+    }
+
+    .tr1 > td:nth-child(1) {
+      text-align: left;
+      color: #2d2d2a;
+    }
+
+    .tr1 > td:nth-child(2) {
+      text-align: right;
+      color: #52ad9c;
+    }
+
+    .td1 {
+      border-bottom: 1px solid #dadada;
+      padding: 25px 25px 25px 0;
+    }
+
+
+    .btn {
+      outline: none;
+      border: none;
+      padding: 10px 30px;
+      color: white;
+      border-radius: 1rem;
+      width: 20%;
+      cursor: pointer;
+    }
+
+    a.signn {
+      color: #465b52;
+      font-size: 18px;
+    }
+
+    div.sign {
+      display: flex;
+      margin: 30px 0;
+      justify-content: center;
+    }
+
+    div.titlecheck {
+      display: flex;
+      margin: 30px 0;
+      justify-content: center;
+    }
+
+    .d-flex {
+      display: flex;
+      flex-direction: row;
+      background: #f6f6f6;
+      border-radius: 0 0px 5px;
+      padding: 25px;
+      justify-content: space-between;
+    }
+
+    .Yorder {
+      margin-right: 200px;
+      height: 600px;
+      padding: 20px;
+      border: 1px solid #dadada;
+      background-color: white;
+      padding: 30px;
+
+      box-shadow: 1px 1px 4px 1px #e6e6e6;
+      width: 428px;
+      overflow: auto;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+<div class="container">
+  <div class="titlecheck">
+    <h2>Product Order Form</h2>
+  </div>
+  <div class="d-flex">
+    <form method="post" id="form1" th:action="@{${action}}" th:object="${orderForm}">
+      <div th:if="${error == 1}" > <!-- Show this div if error == 1 -->
+        <p style="color: red">Incorrect Fields</p>
+      </div>
+      <h3 style="color: darkred; margin: auto"></h3>
+      <input class="input11" type="text" name="houseadd" th:field="*{shipping}" maxlength="250" placeholder="Address" required>
+      <input class="input11" id="account-field" type="text" th:field="*{accountNumber}" maxlength="250" name="acc" placeholder="JazzCash Account Number" required>
+      <button name="sub" type="submit" class="btn112">Place Order</button>
+    </form>
+    <div class="Yorder">
+      <table class="table12">
+        <tr class='tr1'>
+          <th class='th1' colspan='2'>Your order</th>
+        </tr>
+
+
+
+
+            <tr class='tr1' th:each="displayCart : ${cartItems}">
+        <td style="max-width: 200px; overflow:auto;" class='td1' th:text="${displayCart.itemName} + ' X ' + ${displayCart.itemqty}"></td>
+        <td class='td1' th:text="'Rs. ' + ${displayCart.itemPrice}"></td>
+        </tr>
+
+
+
+        <tr class='tr1'>
+          <td class='td1'>Subtotal</td>
+          <td class='td1' th:text="'Rs. ' + ${total}"></td>
+        </tr>
+        <tr class='tr1'>
+          <td class='td1'>Shipping</td>
+          <td class='td1'>Free shipping</td>
+        </tr>
+
+
+      </table><br>
+    </div><!-- Yorder -->
+  </div>
+</div>
+
+</body>
+
+</html>

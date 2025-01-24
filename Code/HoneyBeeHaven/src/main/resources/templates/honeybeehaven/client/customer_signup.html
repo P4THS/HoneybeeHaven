@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/c/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Login and Registration Form in HTML & CSS | CodingLab </title>-->
+    <link rel="stylesheet" th:href="@{/css/client/customer_signup_style.css}">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link th:href="@{/css/fontawesome/all.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/brands.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/fontawesome.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/regular.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/solid.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/svg-with-js.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/v4-font-face.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/v4-shims.css}" rel="stylesheet">
+      <link th:href="@{/css/fontawesome/v5-font-face.css}" rel="stylesheet">
+      <title>Honeybee Haven- Client Signup</title>
+      <link th:href="@{/images/honeybeeHavenLogo.svg}" rel="icon">
+      <style>
+          body{
+              background: url("/images/client/signupPage.jpg") ;
+              height: 100vh;
+              width: 100vw;
+              margin: 0;
+              background-size: cover;
+          }
+          .favicons{
+              margin-left: 10px;
+              margin-right: 10px;
+          }
+          #submitButton{
+              background-color: black;
+              box-shadow: none;
+              border-color: black;
+          }
+          #submitButton:hover{
+              background-color: #ffd900;
+              border-color:#ffd900;
+              color: black;
+
+              transition-property:  background-color,border-color;
+              transition-duration: 0.7s;
+              transition-timing-function: ease;
+          }
+          #submitButton:not(:hover){
+              transition-property:  background-color,border-color;
+              transition-duration: 1.5s;
+              transition-timing-function: ease;
+          }
+
+          .inputBoxStyling{
+              background-color: wheat;
+              color: black;
+              border-radius: 12px;
+          }
+
+      </style>
+   </head>
+<body>
+ 
+ 
+ 
+ <div class="container"  style="opacity: 0.7; background-color: transparent; box-shadow: none;">
+    <input type="checkbox" id="flip">
+
+
+    <div class="forms"  style="background-color: transparent;" >
+        <div th:if="${error == 1}" > <!-- Show this div if error == 1 -->
+            <p style="color: red">Incorrect Fields</p>
+        </div>
+
+        <div th:if="${error == 2}"> <!-- Show this div if error == 2 -->
+            <p style="color: red">Email already exists</p>
+        </div>
+        <div th:if="${error == 3}"> <!-- Show this div if error == 2 -->
+            <p style="color: red">File Size exceeded give less than 1 MB</p>
+        </div>
+        <div class="form-content">
+        <div class="signup-form">
+          <div class="title colorClass" style="color: white; font-weight: bolder;">SignUp</div>
+        <form th:action = "@{/HoneyBeeHaven/submitClientSignup}" th:object="${clientSignupForm}" method="post" enctype="multipart/form-data">
+            <div class="input-boxes ">
+              <div class="input-box  ">
+                <i class="favicons fas fa-user"></i>
+                <input class="inputBoxStyling"  type="text" placeholder="Enter your name" th:field="*{name}" maxlength="250" required/>
+              </div>
+              <div class="input-box">
+                <i class="favicons fas fa-user"></i>
+                <input class="inputBoxStyling"  type="date" placeholder="Enter your Date of Birth (greater than 18)" th:max="${max}" th:field="*{age}" data-bind="value:replyNumber" required>
+              </div>
+              <div class="input-box"  >
+                <i class="favicons fas fa-envelope"></i>
+                <input class="inputBoxStyling"  type="email" placeholder="Enter your email" th:field="*{email}" maxlength="250" required>
+              </div>
+              <div class="input-box ">
+                <i class="favicons fas fa-lock"></i>
+                <input class="inputBoxStyling"  type="password" placeholder="Enter your password" th:field="*{password}" maxlength="250" required>
+              </div>
+                <span style="color: white; font-size: 1.0rem; font-weight: bolder;">Length at least be 8 with at least 1 uppercase and 1 numeric character</span>
+                <div class="input-box ">
+                    <i class="favicons fas fa-lock"></i>
+                    <input class="inputBoxStyling"  type="password" placeholder="Re-enter your password" th:field="*{confirmpassword}" maxlength="250" required>
+                </div>
+                <div class="input-box">
+                    <div style="color: white; font-size: 1.0rem; font-weight: bolder;">Primary Location</div>
+
+                </div>
+                <div >
+                    <select style="font-size: 1.2rem; background-color: wheat;  border-radius: 8px; "   name="stype" th:field="*{primary}" required>
+                        <option  value="">Select Option</option>
+                        <option   value="Punjab">Punjab</option>
+                        <option   value="Sindh">Sindh</option>
+                        <option   value="Balochistan">Balochistan</option>
+                        <option   value="KPK">KPK</option>
+                        <option   value="FATA">FATA</option>
+                    </select>
+                </div>
+              <div class="input-box  ">
+                <i class="favicons fas fa-seedling"></i>
+                <input class="inputBoxStyling" type="text" placeholder="Enter your Address" th:field="*{address}" maxlength="250" required>
+              </div>
+              <div style="margin-top: 20px; color: white; font-size: 1.3rem; font-weight: bolder;">
+                Gender:  MALE <input type="radio" name="myGender" th:value="male" th:field="*{gender}" required>
+                  FEMALE <input type="radio" name="myGender" th:value="female" th:field="*{gender}" required>
+                  Others <input type="radio" name="myGender" th:value="other" th:field="*{gender}" required>
+            </div>
+                <div  class="button input-box " >
+                <label  class="custom-file-upload" id="submitButton">
+                    <span >Upload Photo</span>
+                    <input   type="file" name="file" accept=".jpg, .jpeg, .png">
+                </label>
+                </div>
+              <div class="button input-box">
+                <input class="inputBoxStyling" id="submitButton"  type="submit" value="Submit">
+               </div>
+               <div class="text sign-up-text" style="margin-top: 2%;  color: white;">Already have an account?
+                <a  th:href="@{/HoneyBeeHaven/login}" style="color: lightskyblue;">Login now</a>
+              </div>
+              <div style="margin-top: 2%;  color: white;" class="text sign-up-text">Go to Business
+                  <a  th:href="@{/HoneyBeeHaven/business_signup}" style="color: lightskyblue;">SignUp</a>
+                </div>
+              <div style="margin-top: 2%;  color: white;" class="text sign-up-text">Back to
+                <a th:href="@{/HoneyBeeHaven/index}" style="color: lightskyblue;">HOME</a>
+              </div>
+            </div>
+      </form>
+
+    </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

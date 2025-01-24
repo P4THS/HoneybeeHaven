@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+
+<title>Honeybee Haven - Edit Client</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{/css/fontawesome/all.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/brands.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/fontawesome.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/regular.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/solid.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/svg-with-js.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/v4-font-face.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/v4-shims.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome/v5-font-face.css}" rel="stylesheet">
+<link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/home/inbox.css}" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link th:href="@{/images/honeybeeHavenLogo.svg}" rel="icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" th:href="@{https://fonts.gstatic.com}">
+    <link th:href="@{https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap}" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css}" rel="stylesheet">
+    <link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css}" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link th:href="@{/css/home/index.css}" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/home/index.css}">
+    <link th:href="@{/css/userInterface/navbar.css}" rel="stylesheet">
+    <link th:href="@{/css/userInterface/header.css}" rel="stylesheet">
+    <link th:href="@{/css/business/edit_business.css}" rel="stylesheet">
+        <link th:href="@{/css/userInterface/footer.css}" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+   <!-- Topbar Start -->
+   <div class="container-fluid px-5 d-none d-lg-block">
+       <div class="row gx-5 py-3 align-items-center">
+           <div class="col-lg-3">
+               <div class="d-flex align-items-center justify-content-start">
+
+                   <img th:src="@{/images/honeybeeHavenLogo.svg}" class="HeaderLogo">
+               </div>
+           </div>
+           <div class="col-lg-6">
+               <div class="d-flex align-items-center justify-content-center">
+                   <a th:href="@{/HoneyBeeHaven/index}" class="navbar-brand ms-lg-5">
+
+                   <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Honeybee </span>Haven</h1>
+                   </a>
+               </div>
+           </div>
+           <div class="col-lg-3">
+               <div class="d-flex align-items-center justify-content-end">
+                   <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i
+                           class="fab fa-twitter"></i></a>
+                   <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i
+                           class="fab fa-facebook-f"></i></a>
+                   <a class="btn btn-primary btn-square rounded-circle me-2" href="#"><i
+                           class="fab fa-linkedin-in"></i></a>
+                   <a class="btn btn-primary btn-square rounded-circle" href="#"><i class="fab fa-instagram"></i></a>
+               </div>
+           </div>
+       </div>
+   </div>
+   <!-- Topbar End -->
+
+
+   <!-- Navbar Start -->
+   <div th:utext="${navbar}" class="sticky-lg-top"></div>
+<!-- Navbar End -->
+
+<link th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css}" rel="stylesheet">
+<div class="container">
+<div class="row flex-lg-nowrap">
+<div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+
+</div>
+    <div class="col">
+        <div class="row">
+            <div class="col mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="e-profile">
+                            <div class="row">
+                                <div class="col-12 col-sm-auto mb-3">
+                                    <div class="mx-auto" style="width: 140px;">
+                                        <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                                            <img th:src="@{${image}}" alt="Admin" class=" p-1 bg-primary" width="140">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                                    <div class="text-center text-sm-left mb-2 mb-sm-0">
+                                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap" th:text="${name}"></h4>
+                                        <p class="mb-0" th:text="${email}"></p>
+
+                                    </div>
+                                    <div class="text-center text-sm-right">
+                                        <span class="badge badge-secondary">Client</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item"><a href class="active nav-link">Settings</a></li>
+                            </ul>
+                            <div class="tab-content pt-3">
+                                <div class="tab-pane active">
+                                    <form class="form" th:action="@{/HoneyBeeHaven/editclient}" th:object="${clientSignupForm}" method="post" enctype="multipart/form-data">
+
+                                        <div th:if="${error == 1}" > <!-- Show this div if error == 1 -->
+                                            <p style="color: red">Incorrect Fields</p>
+                                        </div>
+
+                                        <div th:if="${error == 2}"> <!-- Show this div if error == 2 -->
+                                            <p style="color: red">Email already exists</p>
+                                        </div>
+                                        <div th:if="${error == 3}"> <!-- Show this div if error == 2 -->
+                                            <p style="color: red">File Size exceeded give less than 1 MB</p>
+                                        </div>
+
+
+                                        <div class="mt-2">
+
+
+                                            <label class="custom-file-upload">
+                                                <span>Change Photo</span>
+                                                <input type="file" name="file" accept=".jpg, .jpeg, .png">
+                                            </label>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Full Name</label>
+                                                            <input class="form-control" type="text" name="name" th:field="*{name}" maxlength="250" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Age</label>
+                                                            <input class="form-control" type="date" name="username" th:max="${max}" maxlength="250" th:field="*{age}" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Business Address</label>
+                                                            <input class="form-control" type="text" th:field="*{address}" maxlength="250" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <div class="input-box">
+                                                                <div>Primary Location</div>
+
+                                                            </div>
+                                                            <div>
+                                                                <select name="stype" th:field="*{primary}" required>
+                                                                    <option value="">Select Option</option>
+                                                                    <option value="Punjab">Punjab</option>
+                                                                    <option value="Sindh">Sindh</option>
+                                                                    <option value="Balochistan">Balochistan</option>
+                                                                    <option value="KPK">KPK</option>
+                                                                    <option value="FATA">FATA</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col mb-3">
+                                                        <div class="form-group">
+                                                            <label>Gender</label>
+                                                            Gender: MALE <input type="radio" name="myGender" th:value="male" th:field="*{gender}" required>
+                                                            FEMALE <input type="radio" name="myGender" th:value="female" th:field="*{gender}" required>
+                                                            Others <input type="radio" name="myGender" th:value="other" th:field="*{gender}" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-sm-6 mb-3">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Current Password*</label>
+                                                            <input class="form-control" type="password" th:field="*{checkpassword}" maxlength="250" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>New Password (At least 8 characters with 1 Uppercase and 1 Numeric)</label>
+                                                            <input class="form-control" type="password" maxlength="250"  th:field="*{password}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
+                                                            <input class="form-control" type="password" maxlength="250"  th:field="*{confirmpassword}"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-end">
+                                                <button class="btn btn-primary" type="submit">Save Changes</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-3 mb-3">
+                <div class="card mb-3">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+     <!-- Footer Start -->
+   <div class="container-fluid bg-footer bg-primary text-white mt-5">
+       <div class="container">
+           <div class="row gx-5">
+               <div class="col-lg-8 col-md-6">
+                   <div class="row gx-5">
+                       <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                           <h4 class="text-white mb-4">Beefriend Us</h4>
+                           <div class="d-flex mb-2">
+                               <i class="bi bi-geo-alt text-white me-2"></i>
+                               <p class="text-white mb-0">123 Nectar Lane, Beeville, Honeyland</p>
+                           </div>
+                           <div class="d-flex mb-2">
+                               <i class="bi bi-envelope-open text-white me-2"></i>
+                               <p class="text-white mb-0">honeybeehaven99@gmail.com</p>
+                           </div>
+                           <div class="d-flex mb-2">
+                               <i class="bi bi-telephone text-white me-2"></i>
+                               <p class="text-white mb-0">(+12) 345 67890</p>
+                           </div>
+                       </div>
+                       <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                           <h4 class="text-white mb-4">Quick Links</h4>
+                           <div class="d-flex flex-column justify-content-start">
+                               <a class="text-white mb-2" href="/HoneyBeeHaven/privacyPolicy" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Privacy Policy</a>
+                               <a class="text-white mb-2" href="/HoneyBeeHaven/termsAndConditions" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Terms & Conditions</a>
+                               <a class="text-white mb-2" href="/HoneyBeeHaven/about" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>About Us</a>
+                           </div>
+                       </div>
+                       <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                           <h4 class="text-white mb-4">Popular Links</h4>
+                           <div class="d-flex flex-column justify-content-start">
+                               <a class="text-white mb-2" href=  "https://youtu.be/zpkN0ycubDs" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Live Bee Cam</a>
+                               <a class="text-white mb-2" href= "https://www.nature.org/en-us/" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Nature Conservancy</a>
+                               <a class="text-white mb-2" href=   "https://www.pollinator.org/" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Pollinator Partnership</a>
+                               <a class="text-white mb-2" href="https://thebeeconservancy.org/" target="_blank"><i class="bi bi-arrow-right text-white me-2"></i>Bee Conservancy</a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-lg-4 col-md-6 mt-lg-n5">
+                   <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-secondary p-5">
+                       <h4 class="text-white">Contact Us</h4>
+                       <p>Subscribe to our hive and stay buzzing with the latest updates, sweet deals, and all things honeybee magic.</p>
+                       <p>Let the nectar of knowledge flow to your inbox because you deserve a taste of the sweet stuff.</p>
+                       <form action="/HoneyBeeHaven/contact">
+                           <div class="input-group">
+                               <input style="display: none;" type="text" id="subscriberEmailInput" class="form-control border-white p-3" placeholder="Your Email">
+                               <button id="subscriberEmailButton"  class="btn btn-primary" >Contact</button>
+                           </div>
+                       </form>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+    <!-- Footer End -->
+    
+
+ 
+   
+
+</body>
+</html>

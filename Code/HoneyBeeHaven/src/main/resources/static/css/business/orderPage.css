@@ -1,0 +1,115 @@
+.order-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.order-container table {
+  width: 80%;
+  border: 1px solid #e2e2e2;
+  justify-items: center;
+}
+
+.order-container th {
+  justify-items: center;
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.order-container td {
+  justify-items: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.delivery-button {
+  opacity: 0.8;
+}
+
+.order-container tr:not(thead tr):hover {
+  background-color: #ff9933;
+  color: white;
+  opacity: 1;
+}
+
+tr:not(thead tr):hover td {
+  color: white;
+  opacity: 1;
+}
+
+tr:not(thead tr):hover button {
+  color: white;
+  opacity: 1;
+}
+
+tr:not(thead tr):hover th {
+  color: white;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  color: rgb(54, 33, 33);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  color: rgb(54, 33, 33);
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  color: rgb(54, 33, 33);
+}
+
+.table-striped > tbody > tr:nth-of-type(even) > * {
+  color: rgb(54, 33, 33);
+}
+
+.order-container > .table-striped > tbody > tr:not(thead tr):hover {
+  background-color: #ff9933;
+  color: white;
+  opacity: 1;
+}
+
+.table-striped > tbody > tr:not(thead tr):hover td {
+  color: white;
+  opacity: 1;
+}
+
+.table-striped > tbody > tr:not(thead tr):hover button {
+  color: white;
+  opacity: 1;
+}
+
+.table-striped > tbody > tr:not(thead tr):hover th {
+  color: white;
+}
+
+.table > :not(:last-child) > :last-child > * {
+  border-bottom-color: #e2e2e2;
+}
+
+#orderPageTable {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.modal-header {
+  background-color: #ffe863;
+}
+.close {
+  background-color: #ffe863;
+  border: none;
+}
+
+#dispatchButton {
+  background-color: #f0ad4e;
+  border: none;
+  margin-left: 15px;
+}
+
+#dispatchButton:hover {
+  background-color: #ffd900;
+  transition: bakcground-color 0.2s;
+}
+#cancelDispatchButton:hover {
+  background-color: white;
+  color: black;
+}

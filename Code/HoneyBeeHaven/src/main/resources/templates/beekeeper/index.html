@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+  <title>Beekeeper - Login</title>
+  <link rel="shortcut icon" type="image/x-icon" th:href="@{/images/beekeeperLogo.svg}" />
+  <link rel="stylesheet" th:href="@{/css/login.css}" />
+</head>
+
+<body>
+<div class="container" id="container">
+  <div class="form-container sign-in-container">
+    <form th:action="@{/BeeKeeper/logindata}" th:object="${loginData}" method="post">
+      <h1>Login</h1>
+      <span>to your hive</span>
+      <input type="email" placeholder="Email" th:field="*{email}" maxlength="250" required />
+      <input
+              type="password"
+              placeholder="Password"
+              th:field="*{password}"
+              maxlength="250"
+              required
+      />
+      <button id="loginButton" type="submit">Log In</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-right">
+        <h1>BEE KEEPER</h1>
+        <p>Hive Harmony: Where Bees and Beekeepers Unite</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

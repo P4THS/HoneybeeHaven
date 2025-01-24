@@ -1,0 +1,374 @@
+input{
+display: block;
+}
+
+.w-100{
+    height: auto;
+}
+
+.box h1{
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow: ellipsis; 
+    color: black;
+}
+
+.box p{
+    overflow:hidden;
+    white-space:wrap; 
+    text-overflow: ellipsis;
+    margin: 0px 0px;
+}
+
+.box{
+    background-color: white;
+    height:200px;
+    border-radius: 25px;
+    border: 2px solid #E2E2E2;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px ;
+    margin-bottom: 40px ;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    color: black;
+}
+
+.box:hover {
+    background-color: #ffd900;
+    transition: background-color 0.6s ease;
+}
+.box:hover .fa-star{
+    color:  black;
+    transition: color 0.6s ease;
+}
+
+.box:not(:hover) {
+    background-color: white;
+    transition: background-color 0.9s ease;
+}
+
+.box:not(:hover) .fa-star{
+    color: #FFC107;
+    transition: background-color 0.9s ease;
+}
+
+
+.fa-star{
+    color:  #FFC107;
+}
+
+.box .yab{
+    height:100px;
+    width:100px; 
+    margin-top: 2.5%;
+}
+
+.box img{
+    height:150px;
+    width:150px;
+    border-radius: 50%;
+    border: 5px solid #099212; 
+    object-fit: cover;
+}
+
+ .yaba{
+    height:90%;
+    width:87%; 
+    border-radius: 10px; 
+    margin-top: 0.75%;
+    padding: 10px 10px;
+}
+
+ .yabad{
+    display: flex;
+    justify-content: space-between;
+ }
+
+.yabada{
+ width: 70%;
+ }
+
+ .yabadab{
+  margin-right: 20%;
+}
+
+.yabadaba{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.yabadabad{
+
+}
+.yabadabado{
+
+    margin-right: 12%;
+}
+
+.yabadabadoo{
+  font-size: 25px;
+}
+
+
+@media (max-width: 1399px) {
+     .yaba{
+        width:85%; 
+    }
+}
+
+@media (max-width: 1199px) {
+    .yaba{
+        width:82%; 
+    }
+    .yabadab{
+        margin-right: 17%;
+      }
+
+
+}
+
+@media (max-width: 991px) {
+   
+    .box .yab{
+        height:80px;
+        width:80px; 
+        margin-top: 6%;
+    }
+
+    .box img{
+        height:100px;
+        width:100px;
+        border-radius: 50%;
+        border: 5px solid #099212; 
+    }
+    
+    .yabadab{
+        margin-right: 13%;
+      }
+   
+    .yaba{
+        width:82%; 
+    }
+
+}
+
+@media (max-width: 767px) {
+    .box .yab{
+        height:30px;
+        width:30px; 
+        margin-top: 9.2%;
+    }
+
+    .box img{
+        height: 90px;
+        width:90px;
+        border-radius: 50%;
+        border: 5px solid #099212; 
+    }
+    
+
+    .yabadab{
+        margin-right: 7%;
+      }
+   
+    .yaba{
+        width:78%; 
+    }
+}
+
+@media (max-width: 575px) {
+    .box .yab{
+        height:30px;
+        width:30px; 
+        margin-top: 14%;
+    }
+
+    .box img{
+        height: 70px;
+        width:70px;
+        border-radius: 50%;
+        border: 3px solid #099212; 
+    }
+    
+
+    .yabadab{
+        margin-right: 2%;
+      }
+   
+    .yaba{
+        width:80%; 
+    }
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 1320px;
+    margin-top: 50px;
+}
+
+.search-container .ch {
+    display: flex;
+}
+
+.ch label {
+    margin-left: 10px;
+    margin-top: 14px;
+}
+
+.search-input {
+    display: flex; /* Added */
+    border: 2px solid #099212; /* Simplified border declaration */
+    border-radius: 30px; /* Rounded border corners */
+}
+
+.ch input:checked {
+    color: #099212;
+}
+
+.search-input button {
+    border: 0; /* Removed border properties to eliminate border */
+    
+    padding: 0 10px; /* Adjusted padding */
+    width: 80px;
+    height: 50px;
+    background-color: #1fb929;
+    border-left: 2px solid #099212;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    cursor: pointer; /* Added cursor property */
+}
+
+.search-input input:focus-visible{
+    outline: none;
+}
+
+.search-input button:hover {
+    background-color: #ffd900;
+    transition: background-color 0.5s ease;
+}
+
+
+
+.search-input img {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    vertical-align: top;
+    margin-top: 2px;
+}
+
+.search-input input {
+    flex: 1; /* Added to fill available space */
+    border: 0; /* Removed border properties to eliminate border */
+    border-radius: 30px; /* Rounded border corners */
+    width: 500px;
+    height: 50px;
+    padding: 0 10px; /* Adjusted padding */
+}
+
+.filters-container {
+    display: none;
+    transition: all 0.5s;
+    border-top: 0px;
+    padding: 10px;
+    width: 1320px;
+    justify-content: space-between;
+    margin-top: 30px;
+    align-items: center; /* Vertically align content in the middle */
+    display: flex; /* Set the display to flex to use align-items */
+    flex-wrap: wrap; /* Add flex-wrap to prevent content overflow */
+}
+
+.filters-container label{
+    display: grid;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.filters-container select{
+    padding: 5px;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
+}
+
+.filters-container .dropbtn{
+    border-radius: 5px;
+    background-color: #099212;
+    color: white;
+    padding: 5px;
+    font-family: roboto;
+}
+
+.keyword-container {
+    display: flex;
+    flex-wrap: wrap;  
+    width: 1320px;
+    margin-top: 10px;
+}
+
+.keyword {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content label {
+    display: block;
+    padding: 6px 12px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.keyword-checkbox {
+    display: none;
+}
+
+.dropdown-content label {
+    display: block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.dropdown-content label:hover {
+    background-color: #ccc;
+}

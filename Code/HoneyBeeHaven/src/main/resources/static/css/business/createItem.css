@@ -1,0 +1,145 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload span{
+  color: white;
+}
+.custom-file-upload {
+  background-color: #34AD54;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#createButton {
+  width: 20%;
+  height: 30%;
+  border: none;
+  transition: background-color 0.2s;
+  margin-left: 40%;
+  border-radius: 25px;
+}
+#createButton:hover {
+  background-color: #ff9933;
+}
+.form-button {
+  padding: 20px;
+  border: 1px solid #e2e2e2;
+  width: 200px;
+  font-family: "Roboto", sans-serif;
+  color: rgb(53, 45, 45);
+  transition: background-color 0.2s;
+}
+
+.b1 {
+  border-right: 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.b2 {
+  border-right: 0px;
+}
+
+.b3 {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.form-button:hover {
+  background-color: #ff9933;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.form-container {
+  width: 40%;
+  background-color: white;
+  margin-top: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.form-container h3 {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-container input {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 50px;
+  color: gray;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.form-container select {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 50px;
+  color: gray;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.form-container textarea {
+  width: 100%;
+  height: 100px;
+  color: gray;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.form-container button {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #34ad54;
+  color: white;
+  border: 1px solid #34ad54;
+  font-family: roboto;
+  border-radius: 4px;
+}
+
+.centralizing-div {
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
+.button-active {
+  background-color: #ff9933;
+  color: white;
+}
+
+input {
+  border-radius: 8px;
+  border: 1px solid grey;
+}
+
+select {
+  border-radius: 8px;
+  border: 1px solid grey;
+}
+
+textarea {
+  border-radius: 8px;
+  border: 1px solid grey;
+}

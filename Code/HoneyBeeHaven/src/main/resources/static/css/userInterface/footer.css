@@ -1,0 +1,18 @@
+.bg-footer {
+  background: linear-gradient(rgba(52, 173, 84, 0.7), rgba(52, 173, 84, 0.7)),
+    url(../../images/home/footer.png) center bottom no-repeat;
+  background-size: contain;
+}
+
+#subscriberEmailInput {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+#subscriberEmailButton {
+  border-radius: 25px;
+}
+@media (min-width: 991.98px) {
+  .bg-footer {
+    margin-top: 90px !important;
+  }
+}
